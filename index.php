@@ -37,7 +37,7 @@ $suppress_localhost = true;
 // si déplacement www hors de Wamp et pas d'utilisation des jonctions
 //Par défaut la valeur est "../"
 //$server_dir = "WAMPROOT/";
-$server_dir = "../";
+$server_dir = "../../";
 //Fonctionne à condition d'avoir ServerSignature On et ServerTokens Full dans httpd.conf
 $server_software = $_SERVER['SERVER_SOFTWARE'];
 
