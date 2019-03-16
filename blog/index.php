@@ -7,7 +7,7 @@ function run(){
 	$action_file = DIR .'/action/'. ucfirst($action) ."Action.class.php";
 	
 	if(!file_exists($action_file)){
-		echo "action error";die;
+		echo "action error";die;//die — 等同于 exit()
 	}
 	require_once $action_file;
 	$action_class = new $action;

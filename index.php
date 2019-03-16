@@ -39,7 +39,7 @@ $suppress_localhost = true;
 //$server_dir = "WAMPROOT/";
 $server_dir = "../../";
 //Fonctionne à condition d'avoir ServerSignature On et ServerTokens Full dans httpd.conf
-$server_software = $_SERVER['SERVER_SOFTWARE'];
+$server_software = $_SERVER['SERVER_SOFTWARE'];//服务器标识的字串 
 
 $wampConfFile = $server_dir.'wampmanager.conf';
 //chemin jusqu'aux fichiers alias
@@ -48,12 +48,13 @@ $aliasDir = $server_dir.'alias/';
 // on charge le fichier de conf locale
 if (!is_file($wampConfFile))
     die ('Unable to open WampServer\'s config file, please change path in index.php file');
-$fp = fopen($wampConfFile,'r');
-$wampConfFileContents = fread ($fp, filesize ($wampConfFile));
+$fp = fopen($wampConfFile,'r');//只读方式打开，将文件指针指向文件头。
+$wampConfFileContents = fread ($fp, filesize ($wampConfFile));//读取整个文件：从文件中读取 10 个字节：
 fclose ($fp);
 
 
 // on récupère les versions des applis
+// pattern 要搜索的模式，字符串类型。subject 输入字符串。
 preg_match('|phpVersion = (.*)\n|',$wampConfFileContents,$result);
 $phpVersion = str_replace('"','',$result[1]);
 preg_match('|apacheVersion = (.*)\n|',$wampConfFileContents,$result);
