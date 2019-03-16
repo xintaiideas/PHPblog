@@ -13,3 +13,10 @@ blog 又译为网络日志，通常由个人管理，不定期张贴新的文章
     1,评论功能
 
 显示Unable to open WampServer's config file, please change path in index.php file的问题
+路径问题解决
+mvc----
+action---页面展示
+dao---数据库操作
+lib---公用方法
+model----执行逻辑
+templates-----模板存放
